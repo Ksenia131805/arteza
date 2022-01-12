@@ -15,19 +15,30 @@ public class CartPageSteps extends AbstractStep {
 
     @Step("Check to Iframe paypal and click paypal btn")
     public CartPageSteps clickToPaypalBtn() {
-        validatePageIsLoaded(cartPage);
         cartPage.clickPayPalBtn();
         return this;
     }
 
-    @Step("Enter invalid email")
-    public CartPageSteps enterInvalidEmail() {
+    @Step("Switch to new tab")
+    public CartPageSteps switchToNewTab() {
         cartPage.switchToNewBrowserTab();
         return this;
     }
+
+    @Step("Click to next btn")
+    public CartPageSteps clickToNxtBtn() {
+        cartPage.clickToNextBnt();
+        return this;
+    }
+
+    @Step("Switch to new tab")
+    public CartPageSteps switchToFirstTab() {
+        cartPage.switchToFirstBrowserTab();
+        return this;
+    }
+
     @Step("Click to checkout btn")
     public void clickToCheckoutBtn() {
-        validatePageIsLoaded(cartPage);
         cartPage.clickToCheckoutBtn();
     }
 }

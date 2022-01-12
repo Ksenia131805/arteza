@@ -16,7 +16,6 @@ public class SlideOutSteps extends AbstractStep {
 
     @Step("Click view cart")
     public SlideOutSteps clickViewCart() {
-        validatePageIsLoaded(slideOutPage);
         slideOutPage.clickViewCartBtn();
         return this;
     }

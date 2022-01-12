@@ -17,14 +17,12 @@ public class MainSteps extends AbstractStep {
     @Step("Open main page")
     public MainSteps openMainPage() {
         mainPage.openPage();
-        validatePageIsLoaded(mainPage);
         return this;
     }
 
-    @Step("Click cookie btn")
+    @Step("Click cookies btn")
     public MainSteps clickCookiesBtn() {
         mainPage.clickCookiesBtn();
-        validatePageIsLoaded(mainPage);
         return this;
     }
 

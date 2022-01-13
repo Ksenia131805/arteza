@@ -17,7 +17,7 @@ public class PayPalTest extends BaseTest {
                 .clickViewCart();
         cartPageSteps
                 .clickToPaypalBtn()
-                .switchToNewTab()
+                .switchToNewTabAndEnterEmail()
                 .clickToNxtBtn()
                 .switchToFirstTab()
                 .clickToCheckoutBtn();

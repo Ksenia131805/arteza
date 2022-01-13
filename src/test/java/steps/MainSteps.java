@@ -16,7 +16,7 @@ public class MainSteps extends AbstractStep {
 
     @Step("Open main page")
     public MainSteps openMainPage() {
-        mainPage.openPage();
+        mainPage.openMainPage();
         return this;
     }
 

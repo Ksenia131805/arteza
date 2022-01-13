@@ -1,11 +1,9 @@
 package pages;
 
-import Helpers.Helpers;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 @Log4j2
 public class CartPage extends BasePage {
@@ -32,31 +30,22 @@ public class CartPage extends BasePage {
     public void clickPayPalBtn() {
         log.info("Check to IFrame and click {}", paypalBtn);
         frameToBeAvailableAndSwitchToIt(paypalFrame);
-        elementToBeClickable(paypalBtn);
-        paypalBtn.click();
-
+        waitForElementToBeClickable(paypalBtn).click();
     }
 
-    public void switchToNewBrowserTab() {
-        Helpers.switchToNewBrowserTab(driver);
-        elementToBeClickable(emailField);
-        emailField.sendKeys("dfgdfgdf");
+    public void enterEmailValue() {
+        log.info("Enter {}", emailField);
+        waitElementToBeVisible(emailField).sendKeys("dfgdfgdf");
     }
 
 
     public void clickToNextBnt() {
         log.info("Click {}", nextBtn);
-        elementToBeClickable(nextBtn);
-        nextBtn.click();
-    }
-
-    public void switchToFirstBrowserTab() {
-        Helpers.switchToFirstBrowserTab(driver);
+        waitForElementToBeClickable(nextBtn).click();
     }
 
     public void clickToCheckoutBtn() {
         log.info("Click {}", checkoutBtn);
-        elementToBeClickable(checkoutBtn);
-        checkoutBtn.click();
+        waitForElementToBeClickable(checkoutBtn).click();
     }
 }

@@ -19,6 +19,4 @@ public class SlideOutSteps extends AbstractStep {
         slideOutPage.clickViewCartBtn();
         return this;
     }
-
-
 }

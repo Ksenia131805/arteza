@@ -5,6 +5,8 @@ import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 import pages.MainPage;
 
+import static config.ConfigurationTest.getBaseUrl;
+
 @Log4j2
 public class MainSteps extends AbstractStep {
 
@@ -16,7 +18,7 @@ public class MainSteps extends AbstractStep {
 
     @Step("Open main page")
     public MainSteps openMainPage() {
-        mainPage.openMainPage();
+        mainPage.openMainPage(getBaseUrl());
         return this;
     }
 

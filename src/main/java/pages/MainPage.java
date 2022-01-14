@@ -17,14 +17,12 @@ public class MainPage extends BasePage {
     @FindBy (xpath = "//button[contains(@id, 'addProductToCartBtn')]")
     private List<WebElement> addToCartBtn;
 
-    public static final String BASE_URN = "https://arteza.com";
-
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    public void openMainPage(){
-        openPage(BASE_URN);
+    public void openMainPage(String baseUrl){
+        openPage(baseUrl);
     }
     public void clickCookiesBtn() {
         log.info("Click {}", cookieBtn);

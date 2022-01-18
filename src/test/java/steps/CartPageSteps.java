@@ -1,6 +1,6 @@
 package steps;
 
-import Helpers.WindowsHelpers;
+import helpers.WindowsHelpers;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import lombok.extern.log4j.Log4j2;

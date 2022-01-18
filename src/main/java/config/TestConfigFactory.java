@@ -1,20 +1,19 @@
 package config;
 
-import com.typesafe.config.Config;
-import com.typesafe.config.ConfigFactory;
-import com.typesafe.config.ConfigBeanFactory;
+import com.typesafe.config.*;
+import model.BodyProperties;
 
 public class TestConfigFactory {
     private Config config;
     private BodyProperties webConfig;
 
     private TestConfigFactory() {
-        config = ConfigFactory.parseResources("test.conf");
+        config = ConfigFactory.parseResources("enviroment.conf");
     }
 
     public BodyProperties getWebConfig() {
         if (webConfig == null) {
-            webConfig = ConfigBeanFactory.create(config.getObject("stageinUkChrome").toConfig(), BodyProperties.class);
+            webConfig = ConfigBeanFactory.create(config.getObject(System.getProperty("enviroment")).toConfig(), BodyProperties.class);
         }
         return webConfig;
     }

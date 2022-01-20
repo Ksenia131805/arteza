@@ -7,6 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import static config.TestConfigFactory.getBodyProperties;
+
 
 @Log4j2
 public abstract class BasePage {
@@ -14,15 +16,20 @@ public abstract class BasePage {
     protected WebDriver driver;
     protected WebDriverWait explicitlyWait;
 
+
     public BasePage(WebDriver driver) {
         this.driver = driver;
         explicitlyWait = new WebDriverWait(driver, 10);
         PageFactory.initElements(driver, this);
     }
 
+    public String getBaseUrl() {
+        return getBodyProperties().getbaseUrl();
+    }
+
     public void openPage(String url) {
         log.info("Open Main Page {}", url);
-        driver.get(url);
+        driver.get(getBaseUrl() + url);
     }
 
     public void frameToBeAvailableAndSwitchToIt(WebElement element) {

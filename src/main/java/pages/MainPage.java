@@ -11,19 +11,20 @@ import java.util.List;
 @Log4j2
 public class MainPage extends BasePage {
 
-    @FindBy (xpath = "//a[@id='CybotCookiebotDialogBodyButtonAccept']")
+    @FindBy(xpath = "//a[@id='CybotCookiebotDialogBodyButtonAccept']")
     private WebElement cookieBtn;
 
-    @FindBy (xpath = "//button[contains(@id, 'addProductToCartBtn')]")
+    @FindBy(xpath = "//button[contains(@id, 'addProductToCartBtn')]")
     private List<WebElement> addToCartBtn;
 
     public MainPage(WebDriver driver) {
         super(driver);
     }
 
-    public void openMainPage(String baseUrl){
-        openPage(baseUrl);
+    public void openMainPage() {
+        openPage("");
     }
+
     public void clickCookiesBtn() {
         log.info("Click {}", cookieBtn);
         waitForElementToBeClickable(cookieBtn).click();

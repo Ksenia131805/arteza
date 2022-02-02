@@ -1,13 +1,14 @@
 package pages;
 
+import config.BodyPropertiesConfig;
 import lombok.extern.log4j.Log4j2;
+import model.BodyProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import static config.TestConfigFactory.getBodyProperties;
 
 
 @Log4j2
@@ -24,7 +25,7 @@ public abstract class BasePage {
     }
 
     public String getBaseUrl() {
-        return getBodyProperties().getbaseUrl();
+        return BodyPropertiesConfig.getBodyProperties().getbaseUrl();
     }
 
     public void openPage(String url) {

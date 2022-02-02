@@ -14,7 +14,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//a[@id='CybotCookiebotDialogBodyButtonAccept']")
     private WebElement cookieBtn;
 
-    @FindBy(xpath = "//button[contains(@id, 'addProductToCartBtn')]")
+    @FindBy(xpath = "//button[contains(text(), 'Add To Cart')]")
     private List<WebElement> addToCartBtn;
 
     public MainPage(WebDriver driver) {

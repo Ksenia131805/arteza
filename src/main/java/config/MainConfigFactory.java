@@ -3,13 +3,13 @@ package config;
 import com.typesafe.config.*;
 import model.BodyProperties;
 
-public class TestConfigFactory {
+public class MainConfigFactory {
     public static Config config;
     public static Object webConfig;
 
-    private TestConfigFactory() {
-        config = ConfigFactory.parseResources("enviroment.conf");
-        setEnvName("paramUsChrome");
+    public MainConfigFactory(String fileName, String envName) {
+        config = ConfigFactory.parseResources(fileName);
+        setEnvName(envName);
     }
 
     public static Object getWebConfig(Class<?> className) {
@@ -19,17 +19,13 @@ public class TestConfigFactory {
         return webConfig;
     }
 
-    public static TestConfigFactory getEnvConfig() {
-        return new TestConfigFactory();
-    }
-
-    public static BodyProperties getBodyProperties() {
-        return (BodyProperties) getWebConfig(BodyProperties.class);
-    }
-
     public void setEnvName(String params) {
         if (System.getProperty("enviroment") == null) {
             System.setProperty("enviroment", params);
         }
+    }
+
+    public BodyProperties getBodyPropertiesClass() {
+        return BodyPropertiesConfig.getBodyProperties();
     }
 }

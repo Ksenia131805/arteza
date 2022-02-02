@@ -1,8 +1,8 @@
 package model;
 
 public class BodyProperties {
-    public String baseUrl;
-    public Browser browser;
+    private String baseUrl;
+    private Browser browser;
 
     public String getbaseUrl() {
         return baseUrl;

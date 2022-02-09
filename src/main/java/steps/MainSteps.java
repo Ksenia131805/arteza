@@ -31,4 +31,9 @@ public class MainSteps extends AbstractStep {
     public void clickFirstAddToCartBtn() {
         mainPage.clickFirstAddToCartBtn();
     }
+
+    @Step("Click second add to cart btn")
+    public void clickSecondAddToCartBtn() {
+        mainPage.clickSecondAddToCartBtn();
+    }
 }

@@ -3,7 +3,7 @@
 <suite name="Pay Pal" parallel="tests">
     <test name="Add activity type test">
         <classes>
-            <class name="tests.PayPalTest"/>
+            <class name="tests.payPal.PayPalTest"/>
         </classes>
     </test>
 </suite>

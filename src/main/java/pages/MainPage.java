@@ -34,4 +34,9 @@ public class MainPage extends BasePage {
         log.info("Click {}", addToCartBtn);
         waitForElementToBeClickable(addToCartBtn.get(0)).click();
     }
+
+    public void clickSecondAddToCartBtn() {
+        log.info("Click {}", addToCartBtn);
+        waitForElementToBeClickable(addToCartBtn.get(1)).click();
+    }
 }

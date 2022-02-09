@@ -2,6 +2,7 @@ package steps;
 
 import io.qameta.allure.Step;
 import lombok.extern.log4j.Log4j2;
+import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
 import pages.SlideOutPage;
 
@@ -19,4 +20,11 @@ public class SlideOutSteps extends AbstractStep {
         slideOutPage.clickViewCartBtn();
         return this;
     }
+
+    @Step("Verify SlideOutPage")
+    public SlideOutSteps verifyOpenSlideOutPage() {
+        Assert.assertTrue(slideOutPage.getSlideOutLabel().isDisplayed());
+        return this;
+    }
 }
+

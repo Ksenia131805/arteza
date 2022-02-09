@@ -1,7 +1,8 @@
-package tests;
+package tests.payPal;
 
 import io.qameta.allure.Description;
 import org.testng.annotations.Test;
+import tests.BaseTest;
 
 
 public class PayPalTest extends BaseTest {
@@ -9,13 +10,13 @@ public class PayPalTest extends BaseTest {
     @Test
     @Description(value = "Paypal Test")
     public void openMainPageTest() {
-        mainSteps
+        user.mainSteps
                 .openMainPage()
                 .clickCookiesBtn()
                 .clickFirstAddToCartBtn();
-        slideOutSteps
+        user.slideOutSteps
                 .clickViewCart();
-        cartPageSteps
+        user.cartPageSteps
                 .clickToPaypalBtn()
                 .switchToNewTabAndEnterEmail()
                 .clickToNxtBtn()

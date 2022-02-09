@@ -25,6 +25,10 @@
         <allure-testng.version>2.13.8</allure-testng.version>
         <aspectj.version>1.9.5</aspectj.version>
         <typesafe.version>1.4.1</typesafe.version>
+        <suitePayPalXml>src/test/resources/TestSuitePayPal.xml</suitePayPalXml>
+        <suiteMainPageXml>src/test/resources/TestSuiteMainPage.xml</suiteMainPageXml>
+        <defaultSuiteFiles>${suitePayPalXml},${suiteMainPageXml}</defaultSuiteFiles>
+        <suiteXmlFile>${defaultSuiteFiles}</suiteXmlFile>
     </properties>
 
     <dependencies>
@@ -76,6 +80,12 @@
             <artifactId>webdrivermanager</artifactId>
             <version>${webdrivermanager.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>${testng.version}</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <build>
@@ -95,7 +105,7 @@
                         </property>
                     </systemProperties>
                     <suiteXmlFiles>
-                        <suiteXmlFile>src/test/resources/TestSuite.xml</suiteXmlFile>
+                        <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
                     </suiteXmlFiles>
                     <parallel>all</parallel>
                     <useUnlimitedThreads>true</useUnlimitedThreads>

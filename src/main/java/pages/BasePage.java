@@ -1,8 +1,7 @@
 package pages;
 
-import config.BodyPropertiesConfig;
+import config.EnvironmentPropertiesConfig;
 import lombok.extern.log4j.Log4j2;
-import model.BodyProperties;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -25,7 +24,7 @@ public abstract class BasePage {
     }
 
     public String getBaseUrl() {
-        return BodyPropertiesConfig.getBodyProperties().getbaseUrl();
+        return EnvironmentPropertiesConfig.getBodyProperties().getUrl();
     }
 
     public void openPage(String url) {

@@ -1,7 +1,7 @@
 package driver;
 
-import config.BodyPropertiesConfig;
-import config.MainConfigFactory;
+import config.EnvironmentPropertiesConfig;
+import config.EnvironmentConfigReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
@@ -12,7 +12,7 @@ import org.openqa.selenium.safari.SafariDriver;
 @Log4j2
 public class DriverInstance {
 
-    private static MainConfigFactory config = BodyPropertiesConfig.getEnvConfig();
+    private static EnvironmentConfigReader config = EnvironmentPropertiesConfig.getEnvConfig();
 
     public static WebDriver getWebDriver() {
         switch (config.getBodyPropertiesClass().getBrowser()) {
@@ -28,4 +28,9 @@ public class DriverInstance {
                 return new ChromeDriver();
         }
     }
+
+    public enum Browser {
+        CHROME, FIREFOX, SAFARI
+    }
+
 }

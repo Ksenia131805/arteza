@@ -8,7 +8,7 @@ public class SecondAddToCartBtnTest extends BaseTest {
 
     @Test
     @Description(value = "Add to second cart btn")
-    public void openMainPageTest() {
+    public void clickToSecondAddToCartBtnTest() {
         user.mainSteps
                 .openMainPage()
                 .clickCookiesBtn()

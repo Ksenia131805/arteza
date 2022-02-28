@@ -9,7 +9,7 @@ public class PayPalTest extends BaseTest {
 
     @Test
     @Description(value = "Paypal Test")
-    public void openMainPageTest() {
+    public void payPalTest() {
         user.mainSteps
                 .openMainPage()
                 .clickCookiesBtn()
